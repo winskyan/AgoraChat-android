@@ -14,10 +14,24 @@
         android:background="@drawable/shape_drag_handle"/>
 
     <io.agora.chatdemo.general.widget.ArrowItemView
-        android:id="@+id/item_clear_history"
+        android:id="@+id/item_search_message"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:layout_marginTop="10dp"
+        android:foreground="@drawable/ease_ripple_click_gray"
+        app:arrowItemAvatarSrc="@drawable/chat_settings_search"
+        app:arrowItemAvatarHeight="32dp"
+        app:arrowItemAvatarWidth="32dp"
+        app:arrowItemShowAvatar="true"
+        app:arrowItemShowArrow="true"
+        app:arrowItemTitle="@string/chat_setting_search"
+        app:arrowItemTitleSize="16sp"
+        app:arrowItemTitleColor="@color/black"/>
+
+    <io.agora.chatdemo.general.widget.ArrowItemView
+        android:id="@+id/item_clear_history"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
         android:foreground="@drawable/ease_ripple_click_gray"
         app:arrowItemAvatarSrc="@drawable/chat_settings_clear"
         app:arrowItemAvatarHeight="32dp"

@@ -61,6 +61,12 @@ public class ChatSettingsFragment extends BaseBottomSheetFragment implements Swi
     @Override
     protected void initListener() {
         super.initListener();
+        binding.itemSearchMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SearchMessageActivity.actionStart(getActivity(), conversationId, chatType);
+            }
+        });
         binding.itemClearHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
