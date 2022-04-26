@@ -43,6 +43,7 @@ import io.agora.chat.uikit.manager.EaseNotifier;
 import io.agora.chat.uikit.models.EaseGroupInfo;
 import io.agora.chat.uikit.models.EaseUser;
 import io.agora.chat.uikit.options.EaseAvatarOptions;
+import io.agora.chat.uikit.options.EaseReactionOptions;
 import io.agora.chat.uikit.provider.EaseFileIconProvider;
 import io.agora.chat.uikit.provider.EaseGroupInfoProvider;
 import io.agora.chat.uikit.provider.EaseSettingsProvider;
@@ -133,6 +134,10 @@ public class DemoHelper {
         if(options == null) {
             return false;
         }
+		
+		options.setRestServer("http://a1-test.easemob.com");
+        options.setIMServer("52.80.99.104");
+        options.setImPort(6717);
         // Configure custom rest server and im server
         //options.setRestServer(BuildConfig.APP_SERVER_DOMAIN);
         //options.setIMServer("106.75.100.247");
@@ -280,7 +285,8 @@ public class DemoHelper {
                     public Drawable getFileIcon(String filename) {
                         return getFileDrawable(filename);
                     }
-                });
+                })
+               .setReactionOptions(getReactionOptions());
     }
 
     private Drawable getFileDrawable(String filename) {
@@ -318,6 +324,16 @@ public class DemoHelper {
         EaseAvatarOptions avatarOptions = new EaseAvatarOptions();
         avatarOptions.setAvatarShape(1);
         return avatarOptions;
+    }
+
+    /**
+     * Reaction Configuration
+     * @return EaseReactionOptions
+     */
+    private EaseReactionOptions getReactionOptions() {
+        EaseReactionOptions reactionOptions = new EaseReactionOptions();
+        reactionOptions.setOpen(true);
+        return reactionOptions;
     }
 
     public UsersManager getUsersManager() {
